@@ -1,0 +1,11 @@
+.miembros .miembros_titulo {
+  text-align: center;
+  font-size: 50px;
+}
+
+.miembros .miembros_lista .miembros_nombres {
+  font-size: 30px;
+  color: red;
+  text-align: center;
+}
+/*# sourceMappingURL=ItemListaContainer.css.map */

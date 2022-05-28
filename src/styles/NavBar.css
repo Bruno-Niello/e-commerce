@@ -1,0 +1,37 @@
+.nav {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid brown;
+  padding: 3px;
+  margin: 3px;
+}
+
+.nav .nombreTienda {
+  font-size: 30px;
+  border: solid 1px brown;
+  padding: 10px;
+}
+
+.nav .navLink {
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav .navLink:hover {
+  color: white;
+  background-color: brown;
+}
+
+.nav .navLink:active {
+  color: black;
+  font-size: 200%;
+}
+/*# sourceMappingURL=NavBar.css.map */

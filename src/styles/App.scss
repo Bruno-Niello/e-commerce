@@ -1,0 +1,17 @@
+body{
+    color: rgb(107, 0, 0);
+}
+
+.grid-container{  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1.8fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "NavBar"
+      "home";
+    .nav {grid-area: NavBar;}
+    .home {grid-area: home;}
+  }
+  

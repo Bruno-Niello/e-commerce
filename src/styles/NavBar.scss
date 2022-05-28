@@ -1,0 +1,27 @@
+.nav{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid brown;
+    padding: 3px;
+    margin: 3px;
+    .nombreTienda{
+        font-size: 30px;
+        border: solid 1px brown;
+        padding: 10px;
+    }
+    .navLink{
+        font-size: 25px;
+        text-decoration: none;
+        color: black;
+        &:hover{
+            color: white;
+            background-color: brown;
+        }
+        &:active{
+            color: black;
+            font-size: 200%;
+        }
+    }
+}
