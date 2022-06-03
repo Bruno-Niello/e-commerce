@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 export const ListadoMostrar = ({padel}) => {
   return (
     <>
-    {padel.map(item=> <p class="miembros_nombres">{item}</p>)}
+      {padel.map(item=> <p className='miembros_nombres'>{item}</p>)}
     </>
   )
 }

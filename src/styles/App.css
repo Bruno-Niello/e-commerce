@@ -1,3 +1,214 @@
+.icon_pipa {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  font-size: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid brown;
+}
+
+.nav {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid brown;
+  padding: 3px;
+  margin: 3px;
+}
+
+.nav .nombreTienda {
+  font-size: 30px;
+  border: solid 1px brown;
+  padding: 10px;
+}
+
+.nav .navLink {
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav .navLink:hover {
+  color: white;
+  background-color: brown;
+}
+
+.nav .navLink:active {
+  color: black;
+  font-size: 200%;
+}
+
+body {
+  background-color: orange;
+}
+
+.contador {
+  background-color: whitesmoke;
+  border: 1px solid brown;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 225px;
+  height: 100px;
+}
+
+.contador .contador-cantidad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 5px;
+  border: black 2px solid;
+  background-color: whitesmoke;
+  width: 200px;
+}
+
+.contador .contador-cantidad p {
+  font-weight: 600;
+}
+
+.contador .contador-cantidad button {
+  background-color: whitesmoke;
+  border: black 2px solid;
+  width: 30px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.contador .contador-cantidad button:hover {
+  background-color: rgba(187, 187, 187, 0.411);
+}
+
+.contador .contador-cantidad button:active {
+  font-size: 25px;
+  background-color: whitesmoke;
+}
+
+.contador .contador-carrito {
+  color: brown;
+  background-color: whitesmoke;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contador .contador-carrito:hover {
+  background-color: rgba(187, 187, 187, 0.411);
+}
+
+.contador .contador-carrito:active {
+  font-size: 20px;
+  background-color: whitesmoke;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid brown 1px;
+  padding: 15px;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  background-color: #f8dfb1;
+}
+
+.card .card-img {
+  width: 225px;
+  height: 150px;
+  border: solid brown 1px;
+  -webkit-box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card .card-name {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.card .card-model {
+  font-family: italic;
+  font-size: 18px;
+  text-align: center;
+}
+
+.card .card-description {
+  text-align: center;
+}
+
+.pipas {
+  text-align: center;
+}
+
+.container-pipas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container-shop {
+  height: 90%;
+  margin: 10px;
+}
+
+.miembros .miembros_titulo {
+  text-align: center;
+  font-size: 50px;
+}
+
+.miembros .miembros_lista .miembros_nombres {
+  font-size: 30px;
+  color: red;
+  text-align: center;
+}
+
 body {
   color: #6b0000;
 }

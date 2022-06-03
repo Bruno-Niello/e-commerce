@@ -1,0 +1,10 @@
+@import "Item";
+
+.pipas{
+    text-align: center;
+}
+.container-pipas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
