@@ -9,7 +9,7 @@ export const ItemCount = (props) => {
     <>
         <div className='contador'>
             <div className='contador-cantidad'>
-                <button onClick={()=>{if(contador>0){setContador(contador-1)}}}>-</button>
+                <button onClick={()=>{if(contador>1){setContador(contador-1)}}}>-</button>
                 <p>Cantidad: {contador}</p>
                 <button onClick={()=>{if(contador<props.stock){setContador(contador+1)}}}>+</button>
             </div>
