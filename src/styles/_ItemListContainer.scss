@@ -1,19 +1,11 @@
 @import "ItemList";
 
-    .container-shop{
-        height: 90%;
-        margin: 10px;
+.container-shop{
+    height: 90%;
+    margin: 10px;
+    .loading{
+        text-align: center;
+        font-size: 50px;
     }
-    .miembros{
-        .miembros_titulo{
-            text-align: center;
-            font-size: 50px;
-        }
-        .miembros_lista{
-            .miembros_nombres{
-                font-size: 30px;
-                color: red;
-                text-align: center;
-            }
-        }
-    }
+}
+    
