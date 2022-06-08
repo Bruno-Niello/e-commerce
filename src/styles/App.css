@@ -198,15 +198,9 @@ body {
   margin: 10px;
 }
 
-.miembros .miembros_titulo {
+.container-shop .loading {
   text-align: center;
   font-size: 50px;
-}
-
-.miembros .miembros_lista .miembros_nombres {
-  font-size: 30px;
-  color: red;
-  text-align: center;
 }
 
 body {
