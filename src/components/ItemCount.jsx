@@ -13,7 +13,7 @@ export const ItemCount = (props) => {
                 <p>Cantidad: {contador}</p>
                 <button onClick={()=>{if(contador<props.stock){setContador(contador+1)}}}>+</button>
             </div>
-            {/* <button className='contador-carrito' onClick={()=> onAdd(contador)}>Agregar al carrito</button> */}
+            <button className='contador-carrito' onClick={()=> {}}>Agregar al carrito</button>
         </div>
     </>
   )

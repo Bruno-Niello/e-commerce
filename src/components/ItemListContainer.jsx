@@ -30,7 +30,6 @@ export default function Listado() {
       .then((result)=>{
         setItem(result);
         setLoading(false);
-
       })
       .catch(error =>{
         setError(true);
@@ -42,7 +41,7 @@ export default function Listado() {
       })
   }, [])
 
-  console.log(item)
+
 
   return (
   <> 
