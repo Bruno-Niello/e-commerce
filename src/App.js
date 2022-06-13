@@ -7,8 +7,8 @@ import { Nosotros } from './components/Nosotros';
 import { Tabacos } from './components/Tabacos';
 import { Accesorios } from './components/Accesorios';
 import { Pipas } from './components/Pipas';
-import { Bebidas } from './components/Bebidas';
 import { ItemDetailContainer } from './components/ItemDetailContainer';
+import { Producto } from './components/Producto';
 
 
 function App() {
@@ -21,13 +21,13 @@ function App() {
         <NavBar />
       </div>
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/pipas" element={<Pipas/>}/>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/categoria/pipas" element={<Pipas/>}/>
         <Route path="/nosotros" element={<Nosotros/>}/>
-        <Route path="/tabacos" element={<Tabacos/>}/>
-        <Route path="/accesorios" element={<Accesorios/>}/>
-        <Route path="/bebidas" element={<Bebidas/>}/>
-        <Route path="/producto/:id" element={<ItemDetailContainer/>}/>
+        <Route path="/categoria/tabacos" element={<Tabacos/>}/>
+        <Route path="/categoria/accesorios" element={<Accesorios/>}/>
+        <Route path="/producto" element={<Producto/>}/>
+        <Route path="/producto/:id" element={<Producto/>}/>
       </Routes>
     </BrowserRouter>
     
