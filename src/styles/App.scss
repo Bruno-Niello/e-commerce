@@ -1,7 +1,7 @@
 @import "NavBar"; 
 @import "Index";
 @import "ItemListContainer";
-
+@import "ItemDetail";
 
 
 body{
@@ -9,16 +9,16 @@ body{
     font-family: 'BIZ UDPMincho', serif;
 }
 
-.grid-container{  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 1.8fr;
-    grid-auto-columns: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "NavBar"
-      "home";
-    .nav {grid-area: NavBar;}
-    .home {grid-area: home;}
-  }
+// .grid-container{  display: grid;
+//     grid-template-columns: 1fr;
+//     grid-template-rows: 0.2fr 1.8fr;
+//     grid-auto-columns: 1fr;
+//     gap: 0px 0px;
+//     grid-auto-flow: row;
+//     grid-template-areas:
+//       "NavBar"
+//       "home";
+//     .nav {grid-area: NavBar;}
+//     .home {grid-area: home;}
+//   }
   

@@ -11,7 +11,7 @@ export const Accesorios = () => {
   useEffect(()=>{
     detalles
       .then((result)=>{
-        setItem(result.filter(item => item.categoria == "accesorios"));
+        setItem(result.filter(item => item.categoria == "accesorio"));
         setLoading(false);
       })
       .catch(error =>{

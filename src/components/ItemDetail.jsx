@@ -8,14 +8,14 @@ const {stock, name, model, description, price, imgM, detail} = detalle;
 
   return (
     <>
-      <div className=''>
-        <img className='' src={imgM} />
-        <h3 className=''>{name}</h3>
-        <h4 className=''>{model}</h4>
-        <h4 className=''>{price}</h4>
-        <h5 className=''>{description}</h5>
-        <h5 className=''>Stock: {stock}</h5>
-        <p className=''>Detalle del producto: {detail}</p>
+      <div className='detail'>
+        <img className='detail-img' src={imgM} />
+        <h3 className='detail-name'>{name}</h3>
+        <h4 className='detail-model'>{model}</h4>
+        <h4 className='detail-price'>{price}</h4>
+        <h5 className='detail-description'>{description}</h5>
+        <h5 className='detail-stock'>Stock: {stock}</h5>
+        <p className='detail-detail'>Detalle del producto: {detail}</p>
         <ItemCount stock={stock} initial={1}/>
       </div> 
     </>

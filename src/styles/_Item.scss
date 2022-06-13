@@ -7,6 +7,7 @@
     align-items: center;
     border: solid brown 1px;
     padding: 15px;
+    margin: 15px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     background-color: rgb(248, 223, 177);
     .card-img{
@@ -27,5 +28,21 @@
     }
     .card-description{
         text-align: center;
+    }
+    .card-details{
+        border: 1px brown solid;
+        text-decoration: none;
+        margin: 5px;
+        color: brown;
+        padding: 3px;
+        background-color: whitesmoke;
+        box-shadow: 0, 0, 0, 0.3;
+        &:hover{
+            background-color: rgba(187, 187, 187, 0.411);
+        }
+        &:active{
+            font-size: 20px;
+            background-color: whitesmoke;
+        }
     }
 }

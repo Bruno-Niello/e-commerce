@@ -1,0 +1,26 @@
+.detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .detail-img{
+        height: 400px;
+        width: 500px;
+        border: 1px brown solid;
+    }
+    .detail-name{
+        font-size: 36px;
+    }
+    h4{
+        font-size: 24px;
+    }
+    h5{
+        font-size: 18px;
+    }
+    .detail-detail{
+        border: 1px brown solid;
+        padding: 15px;
+        width: 500px;
+    }
+}
