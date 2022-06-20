@@ -9,6 +9,7 @@ import { Accesorios } from './components/Accesorios';
 import { Pipas } from './components/Pipas';
 import { ItemDetailContainer } from './components/ItemDetailContainer';
 import { Producto } from './components/Producto';
+import { Carrito } from './components/Carrito';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/categoria/accesorios" element={<Accesorios/>}/>
         <Route path="/producto" element={<Producto/>}/>
         <Route path="/producto/:id" element={<Producto/>}/>
+        <Route path="/carrito" element={<Carrito/>}/>
       </Routes>
     </BrowserRouter>
     

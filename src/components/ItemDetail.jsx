@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import {ItemCount} from './ItemCount';
+import { Link } from 'react-router-dom';
 
 export const ItemDetail = ({detalle}) => {
 
+const [mostrar, setMostrar] = useState(false);
+
 const {stock, name, model, description, price, imgM, detail} = detalle;
 
+const onAdd = () => {
+  setMostrar(true);
+  console.log("se ejecuto")
+}
 
   return (
     <>
@@ -16,7 +23,12 @@ const {stock, name, model, description, price, imgM, detail} = detalle;
         <h5 className='detail-description'>{description}</h5>
         <h5 className='detail-stock'>Stock: {stock}</h5>
         <p className='detail-detail'>Detalle del producto: {detail}</p>
-        <ItemCount stock={stock} initial={1}/>
+        {mostrar ? 
+          <><div>
+            <Link className='card-details' to="../">Seguir comprando</Link>
+            <Link className='card-details' to="../carrito">Ir al carrito</Link>
+          </div></> : 
+          <ItemCount stock={stock} initial={1} onAdd={onAdd}/>}
       </div> 
     </>
 ) 

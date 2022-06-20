@@ -3,50 +3,35 @@
   height: 75px;
   border-radius: 50%;
   font-size: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border: 1px solid brown;
 }
 
 .nav {
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
   border: 1px solid brown;
   padding: 3px;
   margin: 3px;
 }
-
 .nav .nombreTienda {
   font-size: 30px;
   border: solid 1px brown;
   padding: 10px;
 }
-
 .nav .navLink {
   font-size: 25px;
   text-decoration: none;
   color: black;
 }
-
 .nav .navLink:hover {
   color: white;
   background-color: brown;
 }
-
 .nav .navLink:active {
   color: black;
   font-size: 200%;
@@ -60,44 +45,25 @@ body {
   background-color: whitesmoke;
   border: 1px solid brown;
   padding: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 225px;
   height: 100px;
 }
-
 .contador .contador-cantidad {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
   margin-bottom: 5px;
   border: black 2px solid;
   background-color: whitesmoke;
   width: 200px;
 }
-
 .contador .contador-cantidad p {
   font-weight: 600;
 }
-
 .contador .contador-cantidad button {
   background-color: whitesmoke;
   border: black 2px solid;
@@ -105,16 +71,13 @@ body {
   font-size: 20px;
   font-weight: 400;
 }
-
 .contador .contador-cantidad button:hover {
   background-color: rgba(187, 187, 187, 0.411);
 }
-
 .contador .contador-cantidad button:active {
   font-size: 25px;
   background-color: whitesmoke;
 }
-
 .contador .contador-carrito {
   color: brown;
   background-color: whitesmoke;
@@ -122,62 +85,44 @@ body {
   font-size: 16px;
   font-weight: 600;
 }
-
 .contador .contador-carrito:hover {
   background-color: rgba(187, 187, 187, 0.411);
 }
-
 .contador .contador-carrito:active {
   font-size: 20px;
   background-color: whitesmoke;
 }
 
 .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: solid brown 1px;
   padding: 15px;
   margin: 15px;
-  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-  background-color: #f8dfb1;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  background-color: rgb(248, 223, 177);
 }
-
 .card .card-img {
   width: 225px;
   height: 150px;
   border: solid brown 1px;
-  -webkit-box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
 }
-
 .card .card-name {
   text-align: center;
   font-weight: bolder;
   font-size: 25px;
 }
-
 .card .card-model {
   font-family: italic;
   font-size: 18px;
   text-align: center;
 }
-
 .card .card-description {
   text-align: center;
 }
-
 .card .card-details {
   border: 1px brown solid;
   text-decoration: none;
@@ -185,14 +130,11 @@ body {
   color: brown;
   padding: 3px;
   background-color: whitesmoke;
-  -webkit-box-shadow: 0, 0, 0, 0.3;
-          box-shadow: 0, 0, 0, 0.3;
+  box-shadow: 0, 0, 0, 0.3;
 }
-
 .card .card-details:hover {
   background-color: rgba(187, 187, 187, 0.411);
 }
-
 .card .card-details:active {
   font-size: 20px;
   background-color: whitesmoke;
@@ -203,72 +145,64 @@ body {
 }
 
 .container-pipas {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container-shop {
   width: 90%;
   margin: 10px;
 }
-
 .container-shop .loading {
   text-align: center;
   font-size: 50px;
 }
 
 .detail {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
 .detail .detail-img {
   height: 400px;
   width: 500px;
   border: 1px brown solid;
 }
-
 .detail .detail-name {
   font-size: 36px;
 }
-
 .detail h4 {
   font-size: 24px;
 }
-
 .detail h5 {
   font-size: 18px;
 }
-
 .detail .detail-detail {
   border: 1px brown solid;
   padding: 15px;
   width: 500px;
 }
+.detail .card-details {
+  border: 1px brown solid;
+  text-decoration: none;
+  margin: 5px;
+  color: brown;
+  padding: 3px;
+  background-color: whitesmoke;
+  box-shadow: 0, 0, 0, 0.3;
+}
+.detail .card-details:hover {
+  background-color: rgba(187, 187, 187, 0.411);
+}
+.detail .card-details:active {
+  font-size: 20px;
+  background-color: whitesmoke;
+}
 
 body {
-  color: #6b0000;
-  font-family: 'BIZ UDPMincho', serif;
-}
-/*# sourceMappingURL=App.css.map */
+  color: rgb(107, 0, 0);
+  font-family: "BIZ UDPMincho", serif;
+}/*# sourceMappingURL=App.css.map */
