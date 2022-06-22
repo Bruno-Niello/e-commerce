@@ -1,17 +1,17 @@
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { NavBarLinks } from './NavBarLinks';
 
 
 export const NavBar = () => {
+    const [search, setSearch] = useState();
     return (
     <>
         <nav className='nav'>
-            <CartWidget />
-            <Link className='nombreTienda' to='/'>Mefe Pipas</Link>
-            <Link className='navLink' to='/categoria/pipas'>Pipas</Link>
-            <Link className='navLink' to='/categoria/tabacos'>Tabacos</Link>
-            <Link className='navLink' to='/categoria/accesorios'>Accesorios</Link>
-            <Link className='navLink' to='/nosotros'>Nosotros</Link>
+            <NavBarLinks/>
+            <input onChange={(e) => setSearch(e.target.value)}></input>
+            {console.log(search)}
         </nav>
     </>
     );

@@ -1,11 +1,19 @@
+//@ts-check
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ItemCount } from './ItemCount'
-
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 export const Item = (props) => {
 
-  const onAdd = () => {}
+  // const {comprobar, addProducto} = useContext(CartContext);
+
+  const onAdd = (contador) => {
+    // comprobar(props.id)
+    // addProducto(props, contador)
+    
+  }
  
 
   return (

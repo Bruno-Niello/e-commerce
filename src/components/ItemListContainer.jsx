@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ItemList } from './ItemList';
 import { detalles } from '../productos';
+import { Loader } from './Loader';
 
 export default function ItemListContainer() {
 
@@ -29,8 +30,7 @@ export default function ItemListContainer() {
   return (
   <> 
     <div className='container-shop'>
-      <p className='loading'>{loading && 'Loading...'}</p>
-      <p className='error'>{error && 'Hubo un fallo en la página'}</p>
+      <Loader loading={loading}/>
       <ItemList items={item}/>
     </div>
     <br></br>
