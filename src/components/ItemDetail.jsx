@@ -16,6 +16,7 @@ const onAdd = (contador) => {
   setMostrar(true);
   comprobar(detalle.id);
   addProducto(detalle, contador);
+  alert(`agregaste ${contador}`)
   console.log("se ejecuto")
 }
 

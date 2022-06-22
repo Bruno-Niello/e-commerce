@@ -13,6 +13,7 @@ export const Item = (props) => {
   const onAdd = (contador) => {
     comprobar(props.id);
     addProducto(props, contador);
+    alert(`agregaste ${contador}`)
     console.log("se ejecuto")
   }
  

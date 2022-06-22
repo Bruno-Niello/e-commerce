@@ -16,6 +16,9 @@ export const ItemCount = ({initial, stock, onAdd}) => {
       setContador(contador-1)
     }
   };
+  const reset = () => {
+    setContador(initial)
+  }
 
     return (
     <>
@@ -25,7 +28,7 @@ export const ItemCount = ({initial, stock, onAdd}) => {
                 <p>Cantidad: {contador}</p>
                 <button onClick={()=>{sumar(contador)}}>+</button>
             </div>
-            <button className='contador-carrito' onClick={()=> {onAdd(contador)}}>Agregar al carrito</button>
+            <button className='contador-carrito' onClick={()=> {onAdd(contador); reset()}}>Agregar al carrito</button>
         </div>
     </>
   )
