@@ -3,16 +3,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ItemCount } from './ItemCount'
 import { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import { Contexto } from '../context/CartContext';
+
 
 export const Item = (props) => {
 
-  // const {comprobar, addProducto} = useContext(CartContext);
+  const { comprobar, addProducto } = useContext(Contexto);
 
   const onAdd = (contador) => {
-    // comprobar(props.id)
-    // addProducto(props, contador)
-    
+    comprobar(props.id);
+    addProducto(props, contador);
+    console.log("se ejecuto")
   }
  
 

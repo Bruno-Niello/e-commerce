@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {ItemCount} from './ItemCount';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Contexto } from '../context/CartContext';
 
 export const ItemDetail = ({detalle}) => {
 
@@ -8,8 +10,12 @@ const [mostrar, setMostrar] = useState(false);
 
 const {stock, name, model, description, price, imgM, detail} = detalle;
 
-const onAdd = () => {
+const { comprobar, addProducto } = useContext(Contexto);
+
+const onAdd = (contador) => {
   setMostrar(true);
+  comprobar(detalle.id);
+  addProducto(detalle, contador);
   console.log("se ejecuto")
 }
 

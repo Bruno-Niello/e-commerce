@@ -15,7 +15,7 @@ const CartWidget = () => {
             <div className='icon_pipa'>
                 <GiSmokingPipe />
             </div>
-            {/* <p>{cantidadTotal()}</p> */}
+            <p>{cantidadTotal()}</p>
         </>
     )
 }

@@ -17,7 +17,6 @@ export const ItemCount = ({initial, stock, onAdd}) => {
     }
   };
 
-    <CartContext contador={contador}/>
     return (
     <>
         <div className='contador'>

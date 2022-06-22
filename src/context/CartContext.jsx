@@ -4,23 +4,27 @@ import { createContext } from 'react';
 
 export const Contexto = createContext({});
 
-export default function CartContext({children, contador}) {
+export default function CartContext({children}) {
 
   const [carrito, setCarrito] = useState([]);
 
   const buscarProducto = () => {
     
   }
-  //
-  const addProducto = ({item}) => {
+// some
+  const comprobar = (id) => {
+    return carrito.some(x => x.id === id)
+  };
+//
+  const addProducto = (item, contador) => {
     const nuevoItem = {...item, contador};
     console.log(carrito)
     if(comprobar(nuevoItem.id)){
-      const buscar = carrito.find(x => x.id === nuevoItem.id);
-      const indice = carrito.indexOf(buscar);
-      const nuevoArray = [...carrito];
-      nuevoArray[indice].contador += contador;
-      setCarrito(nuevoArray);
+      const buscar = carrito.find(x => x.id === nuevoItem.id)
+      const indice = carrito.indexOf(buscar)
+      const nuevoArray = [...carrito]
+      nuevoArray[indice].contador += contador
+      setCarrito(nuevoArray)
     }else{setCarrito([...carrito, nuevoItem])}
   };
   // filter
@@ -31,13 +35,10 @@ export default function CartContext({children, contador}) {
   const vaciar = () => {
     setCarrito([]);
   };
-  // some
-  const comprobar = (id) => {
-    return carrito.some(item => item.id === id)
-  };
+
   // reduce
   const cantidadTotal = () => {
-    return carrito.reduce((acc, x) => acc += x.contador)
+    return carrito.reduce((acc, x) => acc += x.contador, 0)
   }
   // reduce
   const precioTotal = () => {
@@ -46,7 +47,7 @@ export default function CartContext({children, contador}) {
   
 
   return (
-    <Contexto.Provider value={{carrito, setCarrito, addProducto, removeProducto, vaciar, comprobar, cantidadTotal, precioTotal, contador}}>
+    <Contexto.Provider value={{carrito, setCarrito, addProducto, removeProducto, vaciar, comprobar, cantidadTotal, precioTotal}}>
       {children}
     </Contexto.Provider>
   )
