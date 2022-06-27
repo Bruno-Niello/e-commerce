@@ -1,20 +1,31 @@
 //@ts-check
-import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import '../src/styles/App.css';
-import { NavBar } from './components/NavBar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home } from './components/Home';
-import { Nosotros } from './components/Nosotros';
-import { Tabacos } from './components/Tabacos';
 import { Accesorios } from './components/Accesorios';
+import { Carrito } from './components/Carrito';
+import { Home } from './components/Home';
+import { NavBar } from './components/NavBar';
+import { Nosotros } from './components/Nosotros';
 import { Pipas } from './components/Pipas';
 import { Producto } from './components/Producto';
-import { Carrito } from './components/Carrito';
+import { Tabacos } from './components/Tabacos';
 import Contexto from './context/CartContext';
+// import { initializeApp } from "firebase/app";
 
 
 function App() {
   
+//   const firebaseConfig = {
+//     apiKey: "AIzaSyDOuAWK2JPL4kiWs0BJ1hz4ua0Bomprzf4",
+//     authDomain: "mefe-pipas.firebaseapp.com",
+//     projectId: "mefe-pipas",
+//     storageBucket: "mefe-pipas.appspot.com",
+//     messagingSenderId: "838799554959",
+//     appId: "1:838799554959:web:8f13ec924775bfdcc373fa"
+//   };
+  
+//   initializeApp(firebaseConfig);
+
   return (
     <>   
     <BrowserRouter>

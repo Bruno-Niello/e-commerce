@@ -261,4 +261,94 @@ body {
 body {
   color: rgb(107, 0, 0);
   font-family: "BIZ UDPMincho", serif;
+}
+
+.carrito-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carrito-container .vaciarCarrito {
+  font-size: 20px;
+  color: brown;
+  border: 1px brown solid;
+  text-decoration: none;
+  margin: 5px;
+  padding: 3px;
+  background-color: whitesmoke;
+  box-shadow: 0, 0, 0, 0.3;
+  width: 100px;
+}
+.carrito-container .vaciarCarrito:hover {
+  background-color: rgba(187, 187, 187, 0.411);
+}
+.carrito-container .vaciarCarrito:active {
+  font-size: 20px;
+  background-color: whitesmoke;
+}
+.carrito-container .carro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}
+.carrito-container .carro .productoCarro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border: solid 1px brown;
+  margin: 10px;
+  width: 600px;
+  height: 100px;
+  padding: 10px;
+}
+.carrito-container .carro .productoCarro .productoCarro-img {
+  height: 95px;
+  width: 150px;
+  border: solid 2px brown;
+}
+.carrito-container .carro .productoCarro div .botonCarro {
+  color: brown;
+  border: 1px brown solid;
+  text-decoration: none;
+  margin: 5px;
+  padding: 3px;
+  background-color: whitesmoke;
+  box-shadow: 0, 0, 0, 0.3;
+}
+.carrito-container .carro .productoCarro div .botonCarro:hover {
+  background-color: rgba(187, 187, 187, 0.411);
+}
+.carrito-container .carro .productoCarro div .botonCarro:active {
+  font-size: 20px;
+  background-color: whitesmoke;
+}
+.carrito-container .carritoVacio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.carrito-container .carritoVacio .carritoVacio-text {
+  font-size: 30px;
+}
+.carrito-container .carritoVacio .carritoVacio-link {
+  text-decoration: none;
+  color: brown;
+  border: 1px brown solid;
+  text-decoration: none;
+  margin: 5px;
+  padding: 3px;
+  background-color: whitesmoke;
+  box-shadow: 0, 0, 0, 0.3;
+}
+.carrito-container .carritoVacio .carritoVacio-link:hover {
+  background-color: rgba(187, 187, 187, 0.411);
+}
+.carrito-container .carritoVacio .carritoVacio-link:active {
+  font-size: 20px;
+  background-color: whitesmoke;
 }/*# sourceMappingURL=App.css.map */

@@ -10,6 +10,99 @@ body{
     font-family: 'BIZ UDPMincho', serif;
 }
 
+.carrito-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .vaciarCarrito{
+        font-size: 20px;
+        color: brown;
+        border: 1px brown solid;
+        text-decoration: none;
+        margin: 5px;
+        padding: 3px;
+        background-color: whitesmoke;
+        box-shadow: 0, 0, 0, 0.3;
+        width: 100px;
+        &:hover{
+            background-color: rgba(187, 187, 187, 0.411);
+        }
+        &:active{
+            font-size: 20px;
+            background-color: whitesmoke;
+        } 
+    }
+    .carro{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin: 10px;
+        .productoCarro{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            border: solid 1px brown;
+            margin: 10px;
+            width: 600px;
+            height: 100px;
+            padding: 10px;
+            .productoCarro-img{
+                height: 95px;
+                width: 150px;
+                border: solid 2px brown;
+            }
+            div{
+                .botonCarro{
+                    color: brown;
+                    border: 1px brown solid;
+                    text-decoration: none;
+                    margin: 5px;
+                    padding: 3px;
+                    background-color: whitesmoke;
+                    box-shadow: 0, 0, 0, 0.3;
+                    &:hover{
+                        background-color: rgba(187, 187, 187, 0.411);
+                    }
+                    &:active{
+                        font-size: 20px;
+                        background-color: whitesmoke;
+                    } 
+                }
+            }
+        }
+    }
+    .carritoVacio{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .carritoVacio-text{
+            font-size: 30px;
+        }
+        .carritoVacio-link{
+            text-decoration: none;
+            color: brown;
+            border: 1px brown solid;
+            text-decoration: none;
+            margin: 5px;
+            padding: 3px;
+            background-color: whitesmoke;
+            box-shadow: 0, 0, 0, 0.3;
+            &:hover{
+                background-color: rgba(187, 187, 187, 0.411);
+            }
+            &:active{
+                font-size: 20px;
+                background-color: whitesmoke;
+            }
+        }
+    }
+}
+
+
 // .grid-container{  display: grid;
 //     grid-template-columns: 1fr;
 //     grid-template-rows: 0.2fr 1.8fr;

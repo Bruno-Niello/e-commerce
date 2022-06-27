@@ -2,6 +2,7 @@
 import { useContext } from 'react';
 import { GiSmokingPipe } from 'react-icons/gi';
 import { Contexto } from '../context/CartContext';
+import {Link} from 'react-router-dom';
 
 
 const CartWidget = () => {
@@ -12,9 +13,11 @@ const CartWidget = () => {
     
     return(
         <>
-            <div className='icon_pipa'>
-                <GiSmokingPipe />
-            </div>
+            <Link to='/carrito'>
+                <div className='icon_pipa'>
+                    <GiSmokingPipe />
+                </div>
+            </Link>
             <p>{cantidadTotal()}</p>
         </>
     )

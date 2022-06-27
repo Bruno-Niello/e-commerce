@@ -24,7 +24,7 @@ export const Item = (props) => {
         <img className='card-img' src={props.img} />
         <h3 className='card-name'>{props.name}</h3>
         <h4 className='card-model'>{props.model}</h4>
-        <h4 className='card-price'>{props.price}</h4>
+        <h4 className='card-price'>${props.price}</h4>
         <h5 className='card-description'>{props.description}</h5>
         <h5 className='card-stock'>Stock: {props.stock}</h5>
         <Link className='card-details' to={'/producto/' + (props.id)}>Detalles</Link>
