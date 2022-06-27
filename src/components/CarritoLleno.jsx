@@ -37,7 +37,7 @@ const productos = carrito?.map(({name, model, price, img, id, contador})=> {
   return (
       <div className='carro'>
         {productos}
-        <p>Precio total: ${precioTotal()}</p>
+        <p className='precioTotal'>Precio total: ${precioTotal()}</p>
       </div>
   )
 }

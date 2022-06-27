@@ -1,6 +1,7 @@
 //@ts-check
 import React from 'react'
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { Contexto } from '../context/CartContext';
 import { CarritoLleno } from './CarritoLleno';
 import { CarritoVacio } from './CarritoVacio';
@@ -14,6 +15,8 @@ export const Carrito = () => {
       <div className='carrito-container'>
         <CarritoLleno />
         <button className='vaciarCarrito' onClick={vaciar}>Vaciar Carrito</button>
+        <button className='vaciarCarrito'>Terminar Compra</button>
+        <Link className='vaciarCarrito' to="../">Agregar más productos</Link>
       </div>
     ) 
   } else {
