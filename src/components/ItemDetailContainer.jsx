@@ -1,8 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { ItemDetail } from './ItemDetail';
-import { detalles } from '../productos';
 import { useParams } from 'react-router-dom';
+import { Loader } from './Loader';
+import { collection, getDoc, getFirestore } from 'firebase/firestore';
 
 export default function ItemDetailContainer() {
 
@@ -11,31 +12,54 @@ export default function ItemDetailContainer() {
   const [detalle, setDetalle] = useState({});
   const { id } = useParams(); 
 
+  // useEffect(()=>{
+  //   detalles
+  //     .then((result)=>{
+  //       setDetalle(result.find(item => item.id == id));
+  //       setLoading(false);
+  //     })
+  //     .then(
+  //       console.log(detalle)
+  //     )
+  //     .catch(error =>{
+  //       setError(true);
+  //       setLoading(false);
+  //       console.error("Error:", error)
+  //     })
+  //     .finally(()=>{
+  //       setLoading(false);
+  //     })
+  // }, [])
+
+
   useEffect(()=>{
-    detalles
-      .then((result)=>{
-        setDetalle(result.find(item => item.id == id));
-        setLoading(false);
-      })
-      .then(
+
+    const db = getFirestore();
+    const itemsCollection = collection(db, 'items', id);
+    // if(id){
+    //   const q = query(itemsCollection, where())
+    // }
+
+    getDoc(itemsCollection)
+      .then((items) => {
+        setDetalle({...items.data(), id: items.id})
         console.log(detalle)
-      )
-      .catch(error =>{
+      })
+      .catch(error => {
         setError(true);
         setLoading(false);
-        console.error("Error:", error)
+        console.error("error", error)
       })
-      .finally(()=>{
-        setLoading(false);
-      })
-  }, [])
+      .finally(()=>{setLoading(false)})
+
+  }, [id])
     
       
 
   return (
     <> 
     <div className='container-shop'>
-        <p className='loading'>{loading && 'Loading...'}</p>
+        <Loader loading={loading}/>
         <p className='error'>{error && 'Hubo un fallo en la página'}</p>
         {detalle && <ItemDetail detalle={detalle}/>}
     </div>   

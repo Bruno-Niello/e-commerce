@@ -15,7 +15,7 @@ export const Carrito = () => {
       <div className='carrito-container'>
         <CarritoLleno />
         <button className='vaciarCarrito' onClick={vaciar}>Vaciar Carrito</button>
-        <button className='vaciarCarrito'>Terminar Compra</button>
+        <Link className='vaciarCarrito' to="/carrito/checkout">Terminar Compra</Link>
         <Link className='vaciarCarrito' to="../">Agregar más productos</Link>
       </div>
     ) 
