@@ -12,6 +12,7 @@ import { Producto } from './components/Producto';
 import { Tabacos } from './components/Tabacos';
 import Contexto from './context/CartContext';
 import { initializeApp } from "firebase/app";
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
             <Route path="/categoria/tabacos" element={<Tabacos/>}/>
             <Route path="/categoria/accesorios" element={<Accesorios/>}/>
             <Route path="/producto" element={<Producto/>}/>
-            <Route path="/producto/:id" element={<Producto/>}/>
+            <Route path="/producto/:id" element={<ItemDetailContainer/>}/>
             <Route path="/carrito" element={<Carrito/>}/>
             <Route path="/carrito/checkout" element={<Checkout/>}/>
           </Routes>

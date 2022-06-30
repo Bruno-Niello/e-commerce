@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { ItemDetail } from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import { Loader } from './Loader';
-import { collection, getDoc, getFirestore } from 'firebase/firestore';
+import { getDoc, getFirestore, doc } from 'firebase/firestore';
 
 export default function ItemDetailContainer() {
 
@@ -35,7 +35,8 @@ export default function ItemDetailContainer() {
   useEffect(()=>{
 
     const db = getFirestore();
-    const itemsCollection = collection(db, 'items', id);
+  
+    const itemsCollection = doc(db, 'items', id);
     // if(id){
     //   const q = query(itemsCollection, where())
     // }
