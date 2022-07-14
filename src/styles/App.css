@@ -577,56 +577,100 @@ body {
     margin: 0;
   }
 }
-body {
-  color: rgb(107, 0, 0);
-  font-family: "BIZ UDPMincho", serif;
-}
-
 .carrito-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.carrito-container .vaciarCarrito {
+.carrito-container .carritoVacio {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url(../media/fondo-alternativo.png);
+  margin: 100px;
+  border: 2px solid black;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
+  height: 600px;
+  width: 800px;
+}
+.carrito-container .carritoVacio .carritoVacio-text {
+  margin: 50px;
+  padding: 20px;
+  background-image: url(../media/fondo-cards.gif);
+  border: 2px solid rgb(136, 4, 4);
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
+}
+.carrito-container .carritoVacio .carritoVacio-link {
+  background-image: url(../media/fondo-cards.gif);
+  color: rgb(136, 4, 4);
+  padding: 15px;
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.5);
   font-size: 20px;
-  color: brown;
-  border: 1px brown solid;
-  text-decoration: none;
-  margin: 5px;
-  padding: 3px;
-  background-color: whitesmoke;
-  box-shadow: 0, 0, 0, 0.3;
-  width: 250px;
+}
+.carrito-container .carritoVacio .carritoVacio-link:hover {
+  color: red;
+}
+.carrito-container .carritoVacio .carritoVacio-link:active {
+  color: rgb(136, 4, 4);
+  font-size: 200%;
+}
+.carrito-container .carrito-botones {
+  background-image: url(../media/fondo-alternativo.png);
+  padding: 15px;
+  margin-bottom: 20px;
+  border: solid 2px black;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
+}
+.carrito-container .carrito-botones .vaciarCarrito {
+  font-size: 16px;
+  background-image: url(../media/fondo-cards.gif);
   height: 50px;
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(136, 4, 4);
+  border: solid 2px rgb(136, 4, 4);
+  margin: 10px;
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.35);
 }
-.carrito-container .vaciarCarrito:hover {
-  background-color: rgba(187, 187, 187, 0.411);
+.carrito-container .carrito-botones .vaciarCarrito:hover {
+  color: red;
 }
-.carrito-container .vaciarCarrito:active {
-  font-size: 20px;
-  background-color: whitesmoke;
+.carrito-container .carrito-botones .vaciarCarrito:active {
+  color: rgb(136, 4, 4);
+  font-size: 120%;
 }
 .carrito-container .carro {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  margin: 10px;
+  background-image: url(../media/fondo-alternativo.png);
+  margin-top: 80px;
+  margin-bottom: 30px;
+  border: solid 2px black;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
 }
 .carrito-container .carro .precioTotal {
+  background-image: url(../media/fondo-cards.gif);
   font-size: 20px;
+  padding: 15px;
+  border-radius: 25px;
   font-weight: bolder;
+  border: solid 2px rgb(136, 4, 4);
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
 }
 .carrito-container .carro .productoCarro {
+  background-image: url(../media/fondo-cards.gif);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  border: solid 1px brown;
+  border: solid 2px rgb(136, 4, 4);
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
   margin: 10px;
   width: 600px;
   height: 100px;
@@ -636,10 +680,16 @@ body {
   height: 95px;
   width: 150px;
   border: solid 2px brown;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.35);
+}
+.carrito-container .carro .productoCarro div {
+  background-image: url(../media/fondo-cards.gif);
 }
 .carrito-container .carro .productoCarro div .botonCarro {
+  background-image: url(../media/fondo-cards.gif);
   color: brown;
-  border: 1px brown solid;
+  border: solid 2px rgb(136, 4, 4);
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.5);
   text-decoration: none;
   margin: 5px;
   padding: 3px;
@@ -647,35 +697,166 @@ body {
   box-shadow: 0, 0, 0, 0.3;
 }
 .carrito-container .carro .productoCarro div .botonCarro:hover {
-  background-color: rgba(187, 187, 187, 0.411);
+  color: red;
 }
 .carrito-container .carro .productoCarro div .botonCarro:active {
-  font-size: 20px;
+  font-size: 120%;
   background-color: whitesmoke;
 }
-.carrito-container .carritoVacio {
+
+@media screen and (max-width: 1000px) and (min-width: 600px) {
+  .carrito-container .carro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    margin: 10px;
+    margin-right: 0px;
+  }
+  .carrito-container .carro .productoCarro {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .carrito-container .carro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin: 10px;
+    margin-right: 0px;
+  }
+  .carrito-container .carro .productoCarro {
+    font-size: 12px;
+    width: 300px;
+  }
+  .carrito-container .carro .productoCarro .productoCarro-img {
+    width: 100px;
+  }
+  .carrito-container .carro .productoCarro div .botonCarro {
+    margin: 3px;
+    font-size: 10px;
+    width: 50px;
+  }
+}
+.checkout-container {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.checkout-container .compraTerminada {
+  background-image: url(../media/fondo-alternativo.png);
+  margin: 50px;
+  width: 600px;
+  height: 600px;
+  border: 2px solid black;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
+  display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
-.carrito-container .carritoVacio .carritoVacio-text {
-  font-size: 30px;
-}
-.carrito-container .carritoVacio .carritoVacio-link {
-  text-decoration: none;
-  color: brown;
-  border: 1px brown solid;
-  text-decoration: none;
-  margin: 5px;
-  padding: 3px;
-  background-color: whitesmoke;
-  box-shadow: 0, 0, 0, 0.3;
-}
-.carrito-container .carritoVacio .carritoVacio-link:hover {
-  background-color: rgba(187, 187, 187, 0.411);
-}
-.carrito-container .carritoVacio .carritoVacio-link:active {
+.checkout-container .compraTerminada .name {
+  background-image: url(../media/fondo-cards.gif);
+  width: 400px;
+  height: 50px;
   font-size: 20px;
-  background-color: whitesmoke;
+  padding: 15px;
+  border: 2px solid rgb(136, 4, 4);
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.35);
+  border-radius: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkout-container .compraTerminada .boton {
+  background-image: url(../media/fondo-cards.gif);
+  width: 250px;
+  height: 50px;
+  font-weight: 800;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: rgb(136, 4, 4);
+  border: solid 2px rgb(136, 4, 4);
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.35);
+}
+.checkout-container .compraTerminada .boton:hover {
+  color: red;
+}
+.checkout-container .compraTerminada .boton:active {
+  color: rgb(136, 4, 4);
+  font-size: 120%;
+}
+.checkout-container .formulario {
+  background-image: url(../media/fondo-alternativo.png);
+  width: 600px;
+  height: 600px;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
+}
+.checkout-container .formulario .form-reserva {
+  background-image: url(../media/fondo-cards.gif);
+  padding: 15px;
+  border-radius: 25px;
+  border: solid 2px rgb(136, 4, 4);
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.35);
+}
+.checkout-container .formulario .formuInput {
+  width: 400px;
+  height: 50px;
+  border: solid 2px rgb(136, 4, 4);
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.35);
+  color: rgb(136, 4, 4);
+  font-size: 18px;
+  padding: 5px;
+}
+.checkout-container .formulario .formBoton {
+  width: 130px;
+  height: 30px;
+  font-size: 20px;
+  color: rgb(136, 4, 4);
+  border: solid 2px rgb(136, 4, 4);
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.35);
+}
+.checkout-container .formulario .formBoton:hover {
+  color: red;
+}
+.checkout-container .formulario .formBoton:active {
+  color: rgb(136, 4, 4);
+  font-size: 120%;
+}
+
+@media screen and (max-width: 600px) {
+  .checkout-container .compraTerminada {
+    width: 450px;
+  }
+  .checkout-container .compraTerminada .name {
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+    padding: 10px;
+  }
+  .checkout-container .formulario {
+    width: 450px;
+  }
+  .checkout-container .formulario .form-reserva {
+    font-size: 16px;
+    width: 300px;
+  }
+  .checkout-container .formulario .formuInput {
+    width: 300px;
+  }
+}
+body {
+  color: rgb(107, 0, 0);
+  font-family: "BIZ UDPMincho", serif;
 }/*# sourceMappingURL=App.css.map */
