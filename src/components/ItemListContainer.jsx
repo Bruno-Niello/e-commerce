@@ -102,7 +102,6 @@ export default function ItemListContainer() {
       <ItemList items={item}/>
       <p className='error'>{error && 'Hubo un fallo en la página'}</p>
     </div>
-    <Footer/>
   </>
   )
 }
