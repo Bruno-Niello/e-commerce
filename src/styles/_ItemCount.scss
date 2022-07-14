@@ -1,6 +1,12 @@
+$color-fuente: rgb(136, 4, 4);
+@mixin fondo-boton{
+    background-image: url(../media/fondo-cards.gif)
+}
+@mixin fondo-card{
+    
+}
 .contador{
-    background-color: whitesmoke;
-    border: 1px solid brown;
+    @include fondo-card;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -9,43 +15,69 @@
     width: 225px;
     height: 100px;
     .contador-cantidad{
+        box-shadow: 2px 2px 2px 1px rgb(0,0,0,0.5);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 5px;
-        border: black 2px solid;
-        background-color: whitesmoke;
+        border: $color-fuente 2px solid;
+        @include fondo-boton;
         width: 200px;
         p{
             font-weight: 600;
         }
         button{
-            background-color: whitesmoke;
-            border: black 2px solid;
+            border: $color-fuente;
+            color: $color-fuente;
+            @include fondo-boton;
             width: 30px;
             font-size: 20px;
             font-weight: 400;
             &:hover{
-                background-color: rgba(187, 187, 187, 0.411);
+                color:red;
             }
             &:active{
                 font-size: 25px;
-                background-color: whitesmoke;
             }
         }
     }
     .contador-carrito{
-        color: brown;
-        background-color: whitesmoke;
+        border: $color-fuente 2px solid;
+        box-shadow: 2px 2px 2px 1px rgb(0,0,0,0.5);
+        color: $color-fuente;
+        @include fondo-boton;
         width: 200px;
         font-size: 16px;
         font-weight: 600;
         &:hover{
-            background-color: rgba(187, 187, 187, 0.411);
+            color:red;
         }
         &:active{
             font-size: 20px;
-            background-color: whitesmoke;
+        }
+    }
+}
+
+@media screen and (max-width: 700px){
+    .contador{
+        width: 150px;
+        height: 60px;
+        .contador-cantidad{
+            width: 130px;
+            font-size: 14px;
+            height: 35px;
+            button{
+                font-size: 14px;
+                height: 35px;
+            }
+            p{
+                margin: 3px;
+                font-size: 12px;
+            }
+        }
+        .contador-carrito{
+            font-size: 12px;
+            width: 130px;
         }
     }
 }

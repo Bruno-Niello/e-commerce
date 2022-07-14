@@ -18,7 +18,7 @@ const CartWidget = () => {
                     <GiSmokingPipe />
                 </div>
             </Link>
-            <p>{cantidadTotal()}</p>
+            <p className='numero-carro'>{cantidadTotal()}</p>
         </>
     )
 }

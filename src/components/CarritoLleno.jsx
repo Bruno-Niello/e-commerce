@@ -1,12 +1,22 @@
 //@ts-check
 import React from 'react'
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Contexto } from '../context/CartContext';
 import {CarritoVacio} from './CarritoVacio';
 
 export const CarritoLleno = () => {
 
 const {removeProducto, precioTotal, carrito} = useContext(Contexto);
+
+// useEffect(() => {
+//   if(carrito == null){
+//     localStorage.setItem("carrito", JSON.stringify(carrito))
+//   } else{
+//     const storage = JSON.parse(localStorage.getItem("carrito"));
+//     localStorage.setItem("carrito", JSON.stringify(storage))
+//   }
+// }, [])
+
 
 
 const productos = carrito?.map(({name, model, price, img, id, contador})=> {

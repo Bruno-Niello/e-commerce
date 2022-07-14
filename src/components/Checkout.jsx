@@ -34,24 +34,27 @@ export const Checkout = () => {
         setFormulario({...formulario, [e.target.name]:e.target.value})
     }
 
+    
+
     if(compraFinalizada == true){
         return(
             <div className=''>
-                <h2 className=''>Gracias por tu compra {formulario.nombre}!!</h2>
-                <h4 className=''>Tu id de compra es: {idCompra}</h4>
-                <h5 className=''>te llegara un correo electronico con la factura correspondiente</h5>
+                <h2 className=''>Gracias por tu reserva {formulario.nombre}!!</h2>
+                <h4 className=''>Tu id de reserva es: {idCompra}</h4>
+                <h5 className=''>te llegara un correo electronico con las instrucciones de pago</h5>
                 <Link className='' to="../" onClick={()=>vaciar()}>Regresar a la tienda</Link>
             </div>
         )
+
     }else{
         return (
             <form className=''>
-                <h2 className=''>Complete los datos para finalizar la compra</h2>
-                <input name="nombre" className='formuInput' placeholder='ingrese su nombre' type="text" onChange={handleChange} required></input>
-                <input name="mail" className='formuInput' placeholder='ingrese su email' type="email" onChange={handleChange} required></input>
-                <input name="cel" className='formuInput' placeholder='ingrese su celular' type="tel" onChange={handleChange} required></input>
-                {/* <input type="submit" onClick={handleClick}>Terminar Compra</input> */}
-                <button onClick={handleClick}>Terminar Compra</button>
+                <h2 className=''>Complete los datos para finalizar la reserva</h2>
+                <input name="nombre" className='formuInput' placeholder='ingrese su nombre' type="text" onChange={handleChange} required="required"/>
+                <input name="mail" className='formuInput' placeholder='ingrese su email' type="email" onChange={handleChange} required="required"/>
+                <input name="cel" className='formuInput' placeholder='ingrese su celular' type="tel" onChange={handleChange} required="required"/>
+                <input type="submit" value="enviar" onClick={handleClick} />
+                {/* <button onClick={handleClick}>Terminar Compra</button> */}
             </form>
           )
     }

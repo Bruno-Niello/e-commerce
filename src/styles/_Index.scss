@@ -1,7 +1,40 @@
-body{
-    background-color: orange;
-}
+$color-fuente: rgb(136, 4, 4);
 
+body{
+    background-image: url("../media/fondo-web.gif")
+}
+.pie{ 
+    background-image: url(../media/fondo-alternativo.png);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: solid black 2px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    .miNombre{ 
+        border-radius: 15px;
+        border: solid $color-fuente 2px;
+        margin: 50px;
+        padding: 5px;
+        background-image: url(../media/fondo-cards.gif);
+    }
+    .redes{
+        .redes_nombre{
+            text-align: center;
+            border-radius: 10px;
+            padding: 3px;
+            border: solid $color-fuente 2px;
+            background-image: url(../media/fondo-cards.gif);
+        }
+        .icon{
+            background-image: url(../media/fondo-cards.gif);
+            border-radius: 15px;
+            margin: 5px;
+            color: $color-fuente;
+            border: solid $color-fuente 2px;
+        }
+    }
+}
 
   
   
