@@ -1,0 +1,174 @@
+$color-fuente: rgb(136, 4, 4);
+
+.carrito-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .carritoVacio{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url(../media/fondo-alternativo.png);
+        margin: 100px;
+        border: 2px solid black;
+        box-shadow: 5px 5px 5px 3px rgb(0,0,0,0.5);
+        height: 600px;
+        width: 800px;
+        .carritoVacio-text{
+            margin: 50px;
+            padding: 20px;
+            background-image: url(../media/fondo-cards.gif);
+            border: 2px solid $color-fuente;
+            box-shadow: 5px 5px 5px 3px rgb(0,0,0,0.5);
+        }
+        .carritoVacio-link{
+            background-image: url(../media/fondo-cards.gif);
+            color: $color-fuente;
+            padding: 15px;
+            box-shadow: 3px 3px 3px 1px rgb(0,0,0,0.5);
+            font-size: 20px;
+            &:hover{
+                color: red;
+            }
+            &:active{
+                color: $color-fuente;
+                font-size: 200%;
+            }
+        }
+    }
+    .carrito-botones{
+        background-image: url(../media/fondo-alternativo.png);
+        padding: 15px;
+        margin-bottom: 20px;
+        border: solid 2px black;
+        box-shadow: 4px 4px 4px 2px rgb(0,0,0,0.5);
+        .vaciarCarrito{
+            font-size: 16px;
+            background-image: url(../media/fondo-cards.gif);
+            height: 50px;
+            width: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: $color-fuente;
+            border: solid 2px $color-fuente;
+            margin: 10px;
+            box-shadow: 3px 3px 3px 1px rgb(0,0,0,0.35);
+            &:hover{
+                color:red;
+            }
+            &:active{
+                color: $color-fuente;
+                font-size: 120%;
+            }
+        }
+    }
+    .carro{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../media/fondo-alternativo.png);
+        margin-top: 80px;
+        margin-bottom: 30px;
+        border: solid 2px black;
+        box-shadow: 4px 4px 4px 2px rgb(0,0,0,0.5);
+        .precioTotal{
+            background-image: url(../media/fondo-cards.gif);
+            font-size: 20px;
+            padding: 15px;
+            border-radius: 25px;
+            font-weight: bolder;
+            border: solid 2px $color-fuente;
+            box-shadow: 4px 4px 4px 2px rgb(0,0,0,0.5);
+        }
+        .productoCarro{
+            background-image: url(../media/fondo-cards.gif);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            border: solid 2px $color-fuente;
+            box-shadow: 4px 4px 4px 2px rgb(0,0,0,0.5);
+            margin: 10px;
+            width: 600px;
+            height: 100px;
+            padding: 10px;
+            .productoCarro-img{
+                height: 95px;
+                width: 150px;
+                border: solid 2px brown;
+                box-shadow: 4px 4px 4px 2px rgb(0,0,0,0.35);
+            }
+            div{
+                background-image: url(../media/fondo-cards.gif);
+                .botonCarro{
+                    background-image: url(../media/fondo-cards.gif);
+                    color: brown;
+                    border: solid 2px $color-fuente;
+                    box-shadow: 3px 3px 3px 1px rgb(0,0,0,0.5);
+                    text-decoration: none;
+                    margin: 5px;
+                    padding: 3px;
+                    background-color: whitesmoke;
+                    box-shadow: 0, 0, 0, 0.3;
+                    &:hover{
+                        color: red;
+                    }
+                    &:active{
+                        font-size: 120%;
+                        background-color: whitesmoke;
+                    } 
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 1000px) and (min-width: 600px){
+    .carrito-container{
+        
+        .carro{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 600px;
+            margin: 10px;
+            margin-right: 0px;
+            .productoCarro{
+                width: 500px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .carrito-container{
+        .carro{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            margin: 10px;
+            margin-right: 0px;
+            .productoCarro{
+                font-size: 12px;
+                width: 300px;
+                .productoCarro-img{
+                    width: 100px;
+                }
+                div{
+                    .botonCarro{
+                        margin: 3px;
+                        font-size: 10px;
+                        width: 50px;
+                    }
+                }
+            }
+        }
+    }
+    
+}

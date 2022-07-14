@@ -23,7 +23,7 @@ const productos = carrito?.map(({name, model, price, img, id, contador})=> {
   return(
   <>
   <div className='productoCarro'>    
-    <div>
+    <div className='imagen'>
       <img className='productoCarro-img' src={img}></img>
     </div>
     <div>
