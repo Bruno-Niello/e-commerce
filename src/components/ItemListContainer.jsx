@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { ItemList } from './ItemList';
 import { Loader } from './Loader';
-import { collection, getDocs, getFirestore } from 'firebase/firestore'
+import { collection, doc, getDocs, getFirestore, get, query, where } from 'firebase/firestore';
+import {Footer} from './Footer';
 
 export default function ItemListContainer() {
 
@@ -9,6 +11,44 @@ export default function ItemListContainer() {
   const [error, setError] = useState(false);
   const [item, setItem] = useState([]); 
 
+
+  const { id } = useParams(); 
+
+    useEffect(() => {
+        const db = getFirestore();
+        const productsCollection = collection(db, 'items');
+
+        if (id) {
+          const q = query(productsCollection, where("categoria", "==", id)) 
+          getDocs(q)
+              .then((snapshot) => {
+                  setItem(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); 
+                  setLoading(false);
+              })
+              .catch((error) => {
+                  setError(error)
+                  setLoading(false);
+              })
+              .finally(() => {
+                  setLoading(false)
+              });
+        } else {
+          getDocs(productsCollection)
+            .then((snapshot) => {
+                setItem(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+                setLoading(false); 
+            })
+            .catch((error) => {
+                setError(error);
+                setLoading(false);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+        }
+
+
+  }, [id])
   // useEffect(()=>{
   //   detalles
   //     .then((result)=>{
@@ -25,23 +65,35 @@ export default function ItemListContainer() {
   //     })
   // }, [])
 
-  useEffect(()=>{
+  // useEffect(()=>{
 
-    const db = getFirestore();
-    const itemsCollection = collection(db, 'items');
+    // const firestoreData = async () => {
+      // const db = getFirestore();
+      // const itemsCollection = collection(db, 'items');
+    //   const allItems = await itemsCollection;
+    //   console.log(allItems.docs)
+    // }    
+    // firestoreData().catch(console.error)
 
-    getDocs(itemsCollection)
-      .then(items => {
-        setItem(items.docs.map((doc)=> ({...doc.data(), id: doc.id})))
-      })
-      .catch(error => {
-        setError(true);
-        setLoading(false);
-        console.error("error", error)
-      })
-      .finally(()=>{setLoading(false)})
+    // const docs = await getDocs(itemsCollection)
 
-  }, [])
+  //   setTimeout(()=>{
+  //     getDocs(itemsCollection)
+  //     .then(snapshot => {
+  //       let productos = [];
+  //       snapshot.docs.forEach((doc)=> {productos.push({...doc.data(), id: doc.id})})
+  //       setItem(productos)
+  //       console.log(item)
+  //     })
+  //     .catch(error => {
+  //       setError(true);
+  //       setLoading(false);
+  //       console.error("error", error)
+  //     })
+  //     .finally(()=>{setLoading(false)})
+  //   }, 2000)
+
+  // }, [])
 
   return (
   <> 
@@ -50,9 +102,6 @@ export default function ItemListContainer() {
       <ItemList items={item}/>
       <p className='error'>{error && 'Hubo un fallo en la página'}</p>
     </div>
-    <br></br>
-    <hr></hr>
-    
   </>
   )
 }

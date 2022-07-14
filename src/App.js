@@ -1,18 +1,16 @@
 //@ts-check
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import '../src/styles/App.css';
-import { Accesorios } from './components/Accesorios';
 import { Carrito } from './components/Carrito';
 import { Checkout } from './components/Checkout';
 import { Home } from './components/Home';
 import { NavBar } from './components/NavBar';
 import { Nosotros } from './components/Nosotros';
-import { Pipas } from './components/Pipas';
 import { Producto } from './components/Producto';
-import { Tabacos } from './components/Tabacos';
 import Contexto from './context/CartContext';
 import { initializeApp } from "firebase/app";
 import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer';
 
 
 function App() {
@@ -28,8 +26,7 @@ function App() {
   
   initializeApp(firebaseConfig);
 
-  return (
-    <>   
+  return ( 
     <BrowserRouter>
       <Contexto>
           <div className="App grid-container">
@@ -37,10 +34,8 @@ function App() {
           </div>
           <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/categoria/pipas" element={<Pipas/>}/>
             <Route path="/nosotros" element={<Nosotros/>}/>
-            <Route path="/categoria/tabacos" element={<Tabacos/>}/>
-            <Route path="/categoria/accesorios" element={<Accesorios/>}/>
+            <Route path="/categoria/:id" element={<ItemListContainer/>}/>
             <Route path="/producto" element={<Producto/>}/>
             <Route path="/producto/:id" element={<ItemDetailContainer/>}/>
             <Route path="/carrito" element={<Carrito/>}/>
@@ -48,10 +43,6 @@ function App() {
           </Routes>
       </Contexto>
     </BrowserRouter>
-    
-    
-    </>
-
   );
 }
 

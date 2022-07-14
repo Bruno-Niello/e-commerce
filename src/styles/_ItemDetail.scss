@@ -1,42 +1,89 @@
-.detail{
+$color-fuente: rgb(136, 4, 4);
+
+.container-shop{
+    margin: 40px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    .detail-img{
-        height: 400px;
-        width: 500px;
-        border: 1px brown solid;
-    }
-    .detail-name{
-        font-size: 36px;
-    }
-    h4{
-        font-size: 24px;
-    }
-    h5{
-        font-size: 18px;
-    }
-    .detail-detail{
-        border: 1px brown solid;
-        padding: 15px;
-        width: 500px;
-    }
-    .card-details{
-        border: 1px brown solid;
-        text-decoration: none;
-        margin: 5px;
-        color: brown;
-        padding: 3px;
-        background-color: whitesmoke;
-        box-shadow: 0, 0, 0, 0.3;
-        &:hover{
-            background-color: rgba(187, 187, 187, 0.411);
+    .detail{
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url(../media/fondo-alternativo.png);
+        height: 800px;
+        width: 1000px;
+        box-shadow: 5px 5px 5px 3px rgb(0, 0, 0, 0.5);
+        .detail-img{
+            margin-top: 5px;
+            height: 300px;
+            width: 450px;
+            border: 2px $color-fuente solid;
+            box-shadow: 5px 5px 5px 3px rgb(0, 0, 0, 0.5);
         }
-        &:active{
-            font-size: 20px;
-            background-color: whitesmoke;
+        .detail-name{
+            border: 2px $color-fuente solid;
+            background-image: url(../media/fondo-cards.gif);
+            font-size: 30px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 5px 3px rgb(0, 0, 0, 0.3);
+        }
+        .detail-text{
+            border: 2px $color-fuente solid;
+            background-image: url(../media/fondo-cards.gif);
+            padding: 5px;
+            box-shadow: 5px 5px 5px 3px rgb(0, 0, 0, 0.3);
+            h4{
+                font-size: 20px;
+                margin: 2px;
+            }
+            h5{
+                margin: 2px;
+                font-size: 16px;
+            }
+        }
+        .detail-detail{
+            border: 2px $color-fuente solid;
+            background-image: url(../media/fondo-cards.gif);
+
+            padding: 15px;
+            width: 500px;
+            box-shadow: 5px 5px 5px 3px rgb(0, 0, 0, 0.5);
+        }
+        .card-details{
+            border: 2px $color-fuente solid;
+            text-decoration: none;
+            margin: 1px;
+            color: $color-fuente;
+            padding: 3px;
+            box-shadow: 5px 5px 5px 3px rgb(0, 0, 0, 0.5);
+            &:hover{
+                background-color: rgba(187, 187, 187, 0.411);
+            }
+            &:active{
+                font-size: 20px;
+                background-color: whitesmoke;
+            }
         }
     }
+}
+
+@media screen and (max-width: 600px) {
+    .container-shop{
+        .detail{
+            width: 600px;
+            font-size: 14px;
+            .detail-img{
+                width: 250px;
+                height: 200px;
+            }
+            .detail-detail{
+                width: 250px;
+            }
+        }
+    }
+
 }

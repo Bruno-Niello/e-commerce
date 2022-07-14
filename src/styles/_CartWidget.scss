@@ -1,4 +1,8 @@
+$color-fuente: rgb(136, 4, 4);
+
 .icon_pipa{
+    background-image: url(../media/fondo-cards.gif);
+    color: $color-fuente;
     width: 75px;
     height: 75px;
     border-radius: 50%;
@@ -6,5 +10,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid brown;
+    border: 1px solid $color-fuente;
+    box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.5);
+    &:hover{
+        border: $color-fuente solid 2px;
+        color: red;
+        
+    }
+    &:active{
+        color: white;
+        background-image: url(../media/fondo-cards.gif);
+        border: solid black 2px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .icon_pipa{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+    }
 }

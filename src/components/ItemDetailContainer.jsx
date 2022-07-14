@@ -4,6 +4,7 @@ import { ItemDetail } from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import { Loader } from './Loader';
 import { getDoc, getFirestore, doc } from 'firebase/firestore';
+import {Footer} from './Footer';
 
 export default function ItemDetailContainer() {
 
@@ -63,7 +64,8 @@ export default function ItemDetailContainer() {
         <Loader loading={loading}/>
         <p className='error'>{error && 'Hubo un fallo en la página'}</p>
         {detalle && <ItemDetail detalle={detalle}/>}
-    </div>   
+    </div>
+    <Footer/>   
     </>
     )
 }

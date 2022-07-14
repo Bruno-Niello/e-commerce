@@ -1,29 +1,111 @@
 @import "CartWidget";
 
+
+$color-fuente: rgb(136, 4, 4);
+$sombra: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
+
+@mixin fondo-nav {
+    background-image: url(../media/fondo-alternativo.png)
+}
+
 .nav{
+    @include fondo-nav;
+    box-shadow: $sombra;
     text-align: center;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid brown;
+    border: 2px solid black;
     padding: 3px;
     margin: 3px;
-    .nombreTienda{
-        font-size: 30px;
-        border: solid 1px brown;
+    .numero-carro{
+        background-image: url(../media/fondo-cards.gif);
+        color: $color-fuente;
         padding: 10px;
+        border: $color-fuente solid 2px;
     }
-    .navLink{
-        font-size: 25px;
-        text-decoration: none;
-        color: black;
+    .nombreTienda{
+        background-image: url(../media/fondo-cards.gif);
+        color: $color-fuente;
+        font-size: 30px;
+        border: solid 2px $color-fuente;
+        box-shadow: $sombra;
+        padding: 10px;
         &:hover{
-            color: white;
-            background-color: brown;
+            padding: 20px;
+            border: $color-fuente solid 2px;
+            color: red;
+            background-image: url(../media/fondo-cards.gif);
+            
         }
         &:active{
-            color: black;
+            color: $color-fuente;
+            background-image: url(../media/fondo-cards.gif);
+            border: solid $color-fuente 2px;
             font-size: 200%;
+        }
+    }
+    .navLinks{
+        .navLink{
+            box-shadow: $sombra;
+            border: solid 2px $color-fuente;
+            background-image: url(../media/fondo-cards.gif);
+            padding: 10px;
+            margin: 20px;
+            font-size: 25px;
+            text-decoration: none;
+            color: $color-fuente;
+            &:hover{
+                padding: 20px;
+                border: $color-fuente solid 2px;
+                color: red;
+                
+            }
+            &:active{
+                color: white;
+                background-color: $color-fuente;
+                border: solid black 2px;
+                font-size: 200%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 600px){
+    .nav{
+        .nombreTienda{
+            font-size: 22px;
+        }
+        .navLinks{
+            margin: 0px;
+            .navLink{
+                margin: 0px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    .nav{
+        display: flex;
+        flex-direction: column;
+        .nombreTienda{
+            font-size: 22px;
+        }
+        .navLinks{
+            display: flex;
+            flex-direction: column;
+            .navLink{
+                font-size: 16px;
+                margin: 2px;
+                &:hover{
+                    padding: 10px;
+                }
+                &:active{
+                    font-size: 110%;
+                }
+            }
         }
     }
 }

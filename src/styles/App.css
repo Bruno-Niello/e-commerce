@@ -1,4 +1,6 @@
 .icon_pipa {
+  background-image: url(../media/fondo-cards.gif);
+  color: rgb(136, 4, 4);
   width: 75px;
   height: 75px;
   border-radius: 50%;
@@ -6,44 +8,157 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid brown;
+  border: 1px solid rgb(136, 4, 4);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+.icon_pipa:hover {
+  border: rgb(136, 4, 4) solid 2px;
+  color: red;
+}
+.icon_pipa:active {
+  color: white;
+  background-image: url(../media/fondo-cards.gif);
+  border: solid black 2px;
 }
 
+@media screen and (max-width: 600px) {
+  .icon_pipa {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+  }
+}
 .nav {
+  background-image: url(../media/fondo-alternativo.png);
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
   text-align: center;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid brown;
+  border: 2px solid black;
   padding: 3px;
   margin: 3px;
 }
+.nav .numero-carro {
+  background-image: url(../media/fondo-cards.gif);
+  color: rgb(136, 4, 4);
+  padding: 10px;
+  border: rgb(136, 4, 4) solid 2px;
+}
 .nav .nombreTienda {
+  background-image: url(../media/fondo-cards.gif);
+  color: rgb(136, 4, 4);
   font-size: 30px;
-  border: solid 1px brown;
+  border: solid 2px rgb(136, 4, 4);
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
   padding: 10px;
 }
-.nav .navLink {
+.nav .nombreTienda:hover {
+  padding: 20px;
+  border: rgb(136, 4, 4) solid 2px;
+  color: red;
+  background-image: url(../media/fondo-cards.gif);
+}
+.nav .nombreTienda:active {
+  color: rgb(136, 4, 4);
+  background-image: url(../media/fondo-cards.gif);
+  border: solid rgb(136, 4, 4) 2px;
+  font-size: 200%;
+}
+.nav .navLinks .navLink {
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
+  border: solid 2px rgb(136, 4, 4);
+  background-image: url(../media/fondo-cards.gif);
+  padding: 10px;
+  margin: 20px;
   font-size: 25px;
   text-decoration: none;
-  color: black;
+  color: rgb(136, 4, 4);
 }
-.nav .navLink:hover {
+.nav .navLinks .navLink:hover {
+  padding: 20px;
+  border: rgb(136, 4, 4) solid 2px;
+  color: red;
+}
+.nav .navLinks .navLink:active {
   color: white;
-  background-color: brown;
-}
-.nav .navLink:active {
-  color: black;
+  background-color: rgb(136, 4, 4);
+  border: solid black 2px;
   font-size: 200%;
 }
 
+@media screen and (max-width: 1000px) and (min-width: 600px) {
+  .nav .nombreTienda {
+    font-size: 22px;
+  }
+  .nav .navLinks {
+    margin: 0px;
+  }
+  .nav .navLinks .navLink {
+    margin: 0px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav .nombreTienda {
+    font-size: 22px;
+  }
+  .nav .navLinks {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav .navLinks .navLink {
+    font-size: 16px;
+    margin: 2px;
+  }
+  .nav .navLinks .navLink:hover {
+    padding: 10px;
+  }
+  .nav .navLinks .navLink:active {
+    font-size: 110%;
+  }
+}
 body {
-  background-color: orange;
+  background-image: url("../media/fondo-web.gif");
+}
+
+.pie {
+  background-image: url(../media/fondo-alternativo.png);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: solid black 2px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.pie .miNombre {
+  border-radius: 15px;
+  border: solid rgb(136, 4, 4) 2px;
+  margin: 50px;
+  padding: 5px;
+  background-image: url(../media/fondo-cards.gif);
+}
+.pie .redes .redes_nombre {
+  text-align: center;
+  border-radius: 10px;
+  padding: 3px;
+  border: solid rgb(136, 4, 4) 2px;
+  background-image: url(../media/fondo-cards.gif);
+}
+.pie .redes .icon {
+  background-image: url(../media/fondo-cards.gif);
+  border-radius: 15px;
+  margin: 5px;
+  color: rgb(136, 4, 4);
+  border: solid rgb(136, 4, 4) 2px;
 }
 
 .contador {
-  background-color: whitesmoke;
-  border: 1px solid brown;
   padding: 5px;
   display: flex;
   flex-direction: column;
@@ -53,93 +168,160 @@ body {
   height: 100px;
 }
 .contador .contador-cantidad {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 5px;
-  border: black 2px solid;
-  background-color: whitesmoke;
+  border: rgb(136, 4, 4) 2px solid;
+  background-image: url(../media/fondo-cards.gif);
   width: 200px;
 }
 .contador .contador-cantidad p {
   font-weight: 600;
 }
 .contador .contador-cantidad button {
-  background-color: whitesmoke;
-  border: black 2px solid;
+  border: rgb(136, 4, 4);
+  color: rgb(136, 4, 4);
+  background-image: url(../media/fondo-cards.gif);
   width: 30px;
   font-size: 20px;
   font-weight: 400;
 }
 .contador .contador-cantidad button:hover {
-  background-color: rgba(187, 187, 187, 0.411);
+  color: red;
 }
 .contador .contador-cantidad button:active {
   font-size: 25px;
-  background-color: whitesmoke;
 }
 .contador .contador-carrito {
-  color: brown;
-  background-color: whitesmoke;
+  border: rgb(136, 4, 4) 2px solid;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+  color: rgb(136, 4, 4);
+  background-image: url(../media/fondo-cards.gif);
   width: 200px;
   font-size: 16px;
   font-weight: 600;
 }
 .contador .contador-carrito:hover {
-  background-color: rgba(187, 187, 187, 0.411);
+  color: red;
 }
 .contador .contador-carrito:active {
   font-size: 20px;
-  background-color: whitesmoke;
 }
 
+@media screen and (max-width: 700px) {
+  .contador {
+    width: 150px;
+    height: 60px;
+  }
+  .contador .contador-cantidad {
+    width: 130px;
+    font-size: 14px;
+    height: 35px;
+  }
+  .contador .contador-cantidad button {
+    font-size: 14px;
+    height: 35px;
+  }
+  .contador .contador-cantidad p {
+    margin: 3px;
+    font-size: 12px;
+  }
+  .contador .contador-carrito {
+    font-size: 12px;
+    width: 130px;
+  }
+}
 .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid brown 1px;
+  border: solid black 2px;
   padding: 15px;
   margin: 15px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-  background-color: rgb(248, 223, 177);
+  background-image: url(../media/fondo-alternativo.png);
 }
 .card .card-img {
   width: 225px;
   height: 150px;
-  border: solid brown 1px;
-  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+  border: solid rgb(136, 4, 4) 2px;
+  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.5);
 }
-.card .card-name {
+.card .card-text {
+  border: solid rgb(136, 4, 4) 2px;
+  width: 225px;
+  height: 250px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+  background-image: url(../media/fondo-cards.gif);
+}
+.card .card-text .card-name {
+  background-image: url(../media/fondo-cards.gif);
   text-align: center;
   font-weight: bolder;
   font-size: 25px;
 }
-.card .card-model {
+.card .card-text .card-model {
+  background-image: url(../media/fondo-cards.gif);
   font-family: italic;
   font-size: 18px;
   text-align: center;
 }
-.card .card-description {
+.card .card-text .card-description {
+  background-image: url(../media/fondo-cards.gif);
   text-align: center;
 }
 .card .card-details {
-  border: 1px brown solid;
+  border: 1px rgb(136, 4, 4) solid;
   text-decoration: none;
   margin: 5px;
-  color: brown;
+  color: rgb(136, 4, 4);
   padding: 3px;
-  background-color: whitesmoke;
-  box-shadow: 0, 0, 0, 0.3;
+  background-image: url(../media/fondo-cards.gif);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
 }
 .card .card-details:hover {
-  background-color: rgba(187, 187, 187, 0.411);
+  font-size: 115%;
+  color: red;
 }
 .card .card-details:active {
   font-size: 20px;
   background-color: whitesmoke;
 }
 
+@media screen and (max-width: 700px) {
+  .card {
+    width: 230px;
+    height: 400px;
+    padding: 0;
+  }
+  .card .card-img {
+    width: 150px;
+    height: 75px;
+    margin: 2px;
+  }
+  .card .card-name {
+    font-size: 18px;
+    margin: 3px;
+  }
+  .card .card-model {
+    font-size: 14px;
+    margin: 0;
+  }
+  .card .card-description {
+    font-size: 12px;
+    margin: 0;
+  }
+  .card .card-details {
+    font-size: 16px;
+    margin: 5px;
+    padding: 2px;
+  }
+}
 .pipas {
   text-align: center;
 }
@@ -160,102 +342,239 @@ body {
   font-size: 50px;
 }
 
-.detail {
+.container-shop {
+  margin: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-shop .detail {
+  padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url(../media/fondo-alternativo.png);
+  height: 800px;
+  width: 1000px;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
 }
-.detail .detail-img {
-  height: 400px;
-  width: 500px;
-  border: 1px brown solid;
+.container-shop .detail .detail-img {
+  margin-top: 5px;
+  height: 300px;
+  width: 450px;
+  border: 2px rgb(136, 4, 4) solid;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
 }
-.detail .detail-name {
-  font-size: 36px;
+.container-shop .detail .detail-name {
+  border: 2px rgb(136, 4, 4) solid;
+  background-image: url(../media/fondo-cards.gif);
+  font-size: 30px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.3);
 }
-.detail h4 {
-  font-size: 24px;
+.container-shop .detail .detail-text {
+  border: 2px rgb(136, 4, 4) solid;
+  background-image: url(../media/fondo-cards.gif);
+  padding: 5px;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.3);
 }
-.detail h5 {
-  font-size: 18px;
+.container-shop .detail .detail-text h4 {
+  font-size: 20px;
+  margin: 2px;
 }
-.detail .detail-detail {
-  border: 1px brown solid;
+.container-shop .detail .detail-text h5 {
+  margin: 2px;
+  font-size: 16px;
+}
+.container-shop .detail .detail-detail {
+  border: 2px rgb(136, 4, 4) solid;
+  background-image: url(../media/fondo-cards.gif);
   padding: 15px;
   width: 500px;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
 }
-.detail .card-details {
-  border: 1px brown solid;
+.container-shop .detail .card-details {
+  border: 2px rgb(136, 4, 4) solid;
   text-decoration: none;
-  margin: 5px;
-  color: brown;
+  margin: 1px;
+  color: rgb(136, 4, 4);
   padding: 3px;
-  background-color: whitesmoke;
-  box-shadow: 0, 0, 0, 0.3;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
 }
-.detail .card-details:hover {
+.container-shop .detail .card-details:hover {
   background-color: rgba(187, 187, 187, 0.411);
 }
-.detail .card-details:active {
+.container-shop .detail .card-details:active {
   font-size: 20px;
   background-color: whitesmoke;
 }
 
-.lds-facebook {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
+@media screen and (max-width: 600px) {
+  .container-shop .detail {
+    width: 600px;
+    font-size: 14px;
+  }
+  .container-shop .detail .detail-img {
+    width: 250px;
+    height: 200px;
+  }
+  .container-shop .detail .detail-detail {
+    width: 250px;
+  }
+}
+@-webkit-keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.loader-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-contenedor .loader {
+  width: 200px;
+  height: 200px;
+  -webkit-animation: rotation 2s infinite linear;
+          animation: rotation 2s infinite linear;
 }
 
-.lds-facebook div {
-  display: inline-block;
-  position: absolute;
-  left: 8px;
-  width: 16px;
-  background: #fff;
-  -webkit-animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-          animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-}
-
-.lds-facebook div:nth-child(1) {
-  left: 8px;
-  -webkit-animation-delay: -0.24s;
-          animation-delay: -0.24s;
-}
-
-.lds-facebook div:nth-child(2) {
-  left: 32px;
-  -webkit-animation-delay: -0.12s;
-          animation-delay: -0.12s;
-}
-
-.lds-facebook div:nth-child(3) {
-  left: 56px;
-  -webkit-animation-delay: 0;
-          animation-delay: 0;
-}
-
-@-webkit-keyframes lds-facebook {
+@-webkit-keyframes shake {
   0% {
-    top: 8px;
-    height: 64px;
+    transform: translate(1px, 1px) rotate(0deg);
   }
-  50%, 100% {
-    top: 24px;
-    height: 32px;
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
   }
 }
 
-@keyframes lds-facebook {
+@keyframes shake {
   0% {
-    top: 8px;
-    height: 64px;
+    transform: translate(1px, 1px) rotate(0deg);
   }
-  50%, 100% {
-    top: 24px;
-    height: 32px;
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+.home_contacto {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25em;
+  justify-content: center;
+  align-items: center;
+}
+.home_contacto .contacto-titulo {
+  background-image: url(../media/fondo-cards.gif);
+  padding: 5px;
+  border-radius: 15px;
+  border: solid rgb(136, 4, 4) 2px;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
+}
+.home_contacto .contacto {
+  display: flex;
+  flex-direction: row;
+}
+.home_contacto .contacto .perfil {
+  width: 400px;
+  height: 400px;
+  margin: 1.25em;
+  border: solid rgb(136, 4, 4) 2px;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
+}
+.home_contacto .contacto .perfil:hover {
+  -webkit-animation: shake 0.5s;
+          animation: shake 0.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.home_contacto .contacto .dato {
+  background-image: url(../media/fondo-cards.gif);
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
+  margin: 1.25em;
+  padding: 0.9375em;
+  border-radius: 3.125em;
+}
+.home_contacto .contacto .dato:hover {
+  border-bottom: 3px solid rgb(136, 4, 4);
+  box-shadow: 4px 4px 4px 2px rgba(136, 4, 4, 0.575);
+}
+
+@media screen and (max-width: 600px) {
+  .home_contacto .contacto {
+    flex-direction: column;
+  }
+  .home_contacto .contacto .perfil {
+    width: 300px;
+    height: 300px;
+    margin: 0;
   }
 }
 body {
