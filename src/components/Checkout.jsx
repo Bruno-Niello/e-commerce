@@ -14,7 +14,6 @@ export const Checkout = () => {
     const db = getFirestore();
     const ordenColeccion = collection(db, 'ordenes')
 
-    // if (!nombre || !mail || !cel) return alert("datos invalidos");
     const handleClick = (e) => {
         e.preventDefault();
         const orden = {
@@ -22,11 +21,9 @@ export const Checkout = () => {
             productos: carrito,
             total: precioTotal()
         }
-        console.log(orden)
         addDoc(ordenColeccion, orden).then(({id})=>{
             setIdCompra(id)
         }).finally(setCompraFinalizada(true))
-        
     }
 
     const handleChange = (e) => {
@@ -56,11 +53,10 @@ export const Checkout = () => {
             <div className='checkout-container'>
                 <form className='formulario'>
                     <h2 className='form-reserva'>Complete los datos para finalizar la reserva</h2>
-                    <input name="nombre" className='formuInput' placeholder='ingrese su nombre' type="text" onChange={handleChange} required="required"/>
-                    <input name="mail" className='formuInput' placeholder='ingrese su email' type="email" onChange={handleChange} required="required"/>
-                    <input name="cel" className='formuInput' placeholder='ingrese su celular' type="tel" onChange={handleChange} required="required"/>
-                    <input type="submit" value="Enviar" onClick={handleClick} className="formBoton"/>
-                    {/* <button onClick={handleClick}>Terminar Compra</button> */}
+                    <input name="nombre" className='formuInput' placeholder='ingrese su nombre' type="text" onChange={handleChange} required/>
+                    <input name="mail" className='formuInput' placeholder='ingrese su email' type="email" onChange={handleChange} required/>
+                    <input name="cel" className='formuInput' placeholder='ingrese su celular' type="tel" onChange={handleChange} required/>
+                    <input type="submit" value="Enviar" onSubmit={handleClick} className="formBoton" required/>
                 </form>
             </div>
             <Footer/>
