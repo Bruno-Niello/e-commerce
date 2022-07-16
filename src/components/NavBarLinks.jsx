@@ -1,7 +1,6 @@
-import React, { memo } from 'react'
 import CartWidget from './CartWidget';
 import {Link} from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
 
 export const NavBarLinks = memo(() => {

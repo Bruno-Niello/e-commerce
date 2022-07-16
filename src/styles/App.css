@@ -247,11 +247,11 @@ body {
 .card .card-img {
   width: 225px;
   height: 150px;
-  border: solid rgb(136, 4, 4) 2px;
+  border: solid #880404 2px;
   box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.5);
 }
 .card .card-text {
-  border: solid rgb(136, 4, 4) 2px;
+  border: solid #880404 2px;
   width: 225px;
   height: 250px;
   margin: 10px;
@@ -276,10 +276,10 @@ body {
   text-align: center;
 }
 .card .card-details {
-  border: 1px rgb(136, 4, 4) solid;
+  border: 1px #880404 solid;
   text-decoration: none;
   margin: 5px;
-  color: rgb(136, 4, 4);
+  color: #880404;
   padding: 3px;
   background-image: url(../media/fondo-cards.gif);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
@@ -397,6 +397,7 @@ body {
   box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
 }
 .container-shop .detail .card-details {
+  background-image: url(../media/fondo-cards.gif);
   border: 2px rgb(136, 4, 4) solid;
   text-decoration: none;
   margin: 1px;
@@ -405,11 +406,11 @@ body {
   box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
 }
 .container-shop .detail .card-details:hover {
-  background-color: rgba(187, 187, 187, 0.411);
+  color: red;
 }
 .container-shop .detail .card-details:active {
-  font-size: 20px;
-  background-color: whitesmoke;
+  font-size: 120%;
+  color: rgb(136, 4, 4);
 }
 
 @media screen and (max-width: 600px) {
@@ -441,12 +442,19 @@ body {
     transform: rotate(359deg);
   }
 }
-.loader-contenedor {
+.loader-contenedor-max {
+  height: 700px;
+  width: 1000px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.loader-contenedor .loader {
+.loader-contenedor-max .loader-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-contenedor-max .loader-contenedor .loader {
   width: 200px;
   height: 200px;
   -webkit-animation: rotation 2s infinite linear;

@@ -1,80 +1,89 @@
-//@ts-check
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { createContext } from 'react';
-// import { cantidad } from '../components/ItemCount';
+import { useState, createContext } from 'react';
+import Swal from 'sweetalert2';
 
 export const Contexto = createContext({});
 
 export default function CartContext({children}) {
 
   const [carrito, setCarrito] = useState([]);
+  const [mostrarAlerta, setMostrarAlerta] = useState(true);
 
-  // useEffect(()=>{
-  //   obtenerLocalStorage();
-  // }, []);
-
-
-// some
+  // comprobar si el producto existe en el carrito
   const comprobar = (id) => {
     return carrito.some(x => x.id === id)
   };
-//
-  const addProducto = (item, contador) => {
 
-    const nuevoItem = {...item, contador};
+  //agregar un producto al carrito y mantenerlo con localstorage. en caso de existir, aumenta su cantidad. 
+  const addProducto = (item, contador, id) => {
+
+    const nuevoItem = {...item, id, contador};
     
     if(comprobar(nuevoItem.id)){
       const buscar = carrito.find(x => x.id === nuevoItem.id);
       const indice = carrito.indexOf(buscar);
       const nuevoArray = [...carrito];
-      nuevoArray[indice].contador += contador;
-      setCarrito(nuevoArray);
-      guardarLocalStorage(nuevoArray);
+      const total = nuevoArray[indice].contador += contador;
+      if(total > nuevoItem.stock){
+        setMostrarAlerta(false);
+      }else{
+        setMostrarAlerta(true);
+        setCarrito(nuevoArray);
+        window.localStorage.setItem(id, JSON.stringify(nuevoArray[indice]))
+      }    
     }else{
-      const nuevoArray = [...carrito, nuevoItem];
-      setCarrito(nuevoArray);
-      guardarLocalStorage(nuevoArray);
+      setMostrarAlerta(true);
+      setCarrito([...carrito, nuevoItem]);
+      window.localStorage.setItem(id, JSON.stringify(nuevoItem))
     }
   };
-  // eliminar producto por id
+
+  // eliminar productos por id
   const removeProducto = (id) => {
-    return setCarrito(carrito.filter(x => x.id !== id));
+    const nuevoCarrito = carrito.filter(x => x.id !== id);
+    setCarrito(nuevoCarrito);
+    window.localStorage.removeItem(id);
   };
-  // vaciar el carrito 
+
+  // vaciar el carrito y el localstorage
   const vaciar = () => {
     setCarrito([]);
-    guardarLocalStorage([]);
+    localStorage.clear();
   };
 
   // mostrar cantidad de productos en el carrito
   const cantidadTotal = () => {
     return carrito.reduce((acc, x) => acc += x.contador, 0)
   }
+
   // mostrar el precio total de todos los items del carrito
   const precioTotal = () => {
     return carrito.reduce((acc, x)=> acc += x.contador * x.price, 0)
   }
-  // cantidad de un solo producto
-  // const removeUno = (id) => {
-  //   return setCarrito()
-  // }
-  //guardar local storage
-  const guardarLocalStorage = ( carrito ) => {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-  }
-  //obtener local storage
-  const obtenerLocalStorage = () => {
-    if(localStorage.getItem("carrito")){
-      setCarrito(JSON.parse(localStorage.getItem("carrito")));
+
+  //usar el local storage para mostrar productos en el checkout
+  const localCarrito = () => {
+    let arrayLocal = Object.values(localStorage);
+    if (arrayLocal.length > 0){
+      let arrayCarrito = [];
+      for(let i=0; i<arrayLocal.length; i++){
+        arrayCarrito.push(JSON.parse(arrayLocal[i]));
+      }
+      setCarrito(arrayCarrito);
     }
   }
 
+
+  // cantidad de un solo producto
+  // const removeUno = () => {
+  //   const buscar = carrito.find(x => x.id === nuevoItem.id);
+  //   const indice = carrito.indexOf(buscar);
+  //   const nuevoArray = [...carrito];
+  //   nuevoArray[indice].contador -= contador;
+  // }
+
   return (
-    <Contexto.Provider value={{carrito, setCarrito, addProducto, removeProducto, vaciar, comprobar, cantidadTotal, precioTotal}}>
+    <Contexto.Provider value={{carrito, mostrarAlerta, setCarrito, addProducto, removeProducto, vaciar, comprobar, cantidadTotal, precioTotal, localCarrito}}>
       {children}
     </Contexto.Provider>
   )
 }
-
-// carrito.reduce((acc, x)=> acc += x.contador * x.price, 0)

@@ -1,10 +1,8 @@
-import React from 'react'
-import { useContext } from 'react';
-import { useState } from 'react'
+import { useContext, useState } from 'react';
 import { Contexto } from '../context/CartContext';
 import { collection, getFirestore, addDoc } from 'firebase/firestore'
 import { Link } from 'react-router-dom';
-import {Footer} from './Footer';
+import { Footer } from './Footer';
 
 export const Checkout = () => {
     const [formulario, setFormulario] = useState({});

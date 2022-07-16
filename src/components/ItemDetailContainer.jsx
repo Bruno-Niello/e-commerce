@@ -1,4 +1,3 @@
-import React from 'react'
 import { useEffect, useState } from 'react';
 import { ItemDetail } from './ItemDetail';
 import { useParams } from 'react-router-dom';
@@ -13,34 +12,11 @@ export default function ItemDetailContainer() {
   const [detalle, setDetalle] = useState({});
   const { id } = useParams(); 
 
-  // useEffect(()=>{
-  //   detalles
-  //     .then((result)=>{
-  //       setDetalle(result.find(item => item.id == id));
-  //       setLoading(false);
-  //     })
-  //     .then(
-  //       console.log(detalle)
-  //     )
-  //     .catch(error =>{
-  //       setError(true);
-  //       setLoading(false);
-  //       console.error("Error:", error)
-  //     })
-  //     .finally(()=>{
-  //       setLoading(false);
-  //     })
-  // }, [])
-
-
   useEffect(()=>{
 
     const db = getFirestore();
   
     const itemsCollection = doc(db, 'items', id);
-    // if(id){
-    //   const q = query(itemsCollection, where())
-    // }
 
     getDoc(itemsCollection)
       .then((items) => {
@@ -56,8 +32,6 @@ export default function ItemDetailContainer() {
 
   }, [id])
     
-      
-
   return (
     <> 
     <div className='container-shop'>
