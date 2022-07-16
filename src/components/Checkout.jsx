@@ -15,7 +15,7 @@ export const Checkout = () => {
     const ordenColeccion = collection(db, 'ordenes')
 
     const handleClick = (e) => {
-        e.preventDefault();
+        
         const orden = {
             comprador: formulario,
             productos: carrito,
@@ -24,6 +24,8 @@ export const Checkout = () => {
         addDoc(ordenColeccion, orden).then(({id})=>{
             setIdCompra(id)
         }).finally(setCompraFinalizada(true))
+
+        e.preventDefault();
     }
 
     const handleChange = (e) => {
@@ -51,12 +53,12 @@ export const Checkout = () => {
         return (
             <>
             <div className='checkout-container'>
-                <form className='formulario'>
+                <form className='formulario' onSubmit={handleClick}>
                     <h2 className='form-reserva'>Complete los datos para finalizar la reserva</h2>
                     <input name="nombre" className='formuInput' placeholder='ingrese su nombre' type="text" onChange={handleChange} required/>
                     <input name="mail" className='formuInput' placeholder='ingrese su email' type="email" onChange={handleChange} required/>
                     <input name="cel" className='formuInput' placeholder='ingrese su celular' type="tel" onChange={handleChange} required/>
-                    <input type="submit" value="Enviar" onSubmit={handleClick} className="formBoton" required/>
+                    <input type="submit" value="Enviar" className="formBoton"/>
                 </form>
             </div>
             <Footer/>
