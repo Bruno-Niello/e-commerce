@@ -1,4 +1,6 @@
 ### MEFE PIPAS
+### DEPLOY: https://mefe-pipas.web.app/
+
 ## ecommerce de pipas ficticio. react.js/firebase/sass
 
 *Página realizada durante el cursado de React en Coderhouse. Bruno Niello. 2022*
