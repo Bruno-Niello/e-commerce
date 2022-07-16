@@ -12,17 +12,7 @@ export const Item = (props) => {
   const onAdd = (contador) => {
     comprobar(props.id);
     addProducto(props, contador, props.id);
-    if(mostrarAlerta){
-    Swal.fire({
-      title: `Se agregaron ${contador} ${props.name} ${props.model}`,
-      width: 600,
-      padding: '3em',
-      iconColor: '#880404',
-      color: '#880404',
-      background: 'url(https://firebasestorage.googleapis.com/v0/b/mefe-pipas.appspot.com/o/fondo-cards.gif?alt=media&token=746a760a-08df-4ff9-80e0-58ed1aacabae)',
-      confirmButtonText: 'Entendido!',
-      confirmButtonColor: '#880404'
-    })}else{
+    if(!mostrarAlerta){
       Swal.fire({
         title: 'No hay suficiente stock',
         width: 600,
@@ -32,8 +22,21 @@ export const Item = (props) => {
         background: 'url(https://firebasestorage.googleapis.com/v0/b/mefe-pipas.appspot.com/o/fondo-cards.gif?alt=media&token=746a760a-08df-4ff9-80e0-58ed1aacabae)',
         confirmButtonText: 'Entendido!',
         confirmButtonColor: '#880404'
-      })
-    }
+      })}
+
+    //este codigo de abajo muestra un alert cuando se agrega un producto. FUNCIONA. pero funciona con ciertos problemas. Dicho problema puede verlo en el readme. 
+      
+    else{
+      Swal.fire({
+        title: `Se agregaron ${contador} ${props.name} ${props.model}`,
+        width: 600,
+        padding: '3em',
+        iconColor: '#880404',
+        color: '#880404',
+        background: 'url(https://firebasestorage.googleapis.com/v0/b/mefe-pipas.appspot.com/o/fondo-cards.gif?alt=media&token=746a760a-08df-4ff9-80e0-58ed1aacabae)',
+        confirmButtonText: 'Entendido!',
+        confirmButtonColor: '#880404'
+      })}
   }
  
 

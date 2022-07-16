@@ -15,7 +15,7 @@ const { comprobar, addProducto, mostrarAlerta } = useContext(Contexto);
 const onAdd = (contador) => {
   setMostrar(true);
   comprobar(detalle.id);
-  addProducto(detalle, contador);
+  addProducto(detalle, contador, detalle.id);
   if(mostrarAlerta){
     Swal.fire({
       title: `Se agregaron ${contador} ${name} ${model}`,

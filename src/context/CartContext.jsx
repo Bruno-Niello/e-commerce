@@ -72,8 +72,8 @@ export default function CartContext({children}) {
     }
   }
 
+  //funcion para borrar un solo item (disminuir cantidad, si tengo 5 pipas, bajar a 4 pipas) no completado por falta de tiempo
 
-  // cantidad de un solo producto
   // const removeUno = () => {
   //   const buscar = carrito.find(x => x.id === nuevoItem.id);
   //   const indice = carrito.indexOf(buscar);
