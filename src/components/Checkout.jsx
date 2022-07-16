@@ -1,10 +1,8 @@
-import React from 'react'
-import { useContext } from 'react';
-import { useState } from 'react'
+import { useContext, useState } from 'react';
 import { Contexto } from '../context/CartContext';
 import { collection, getFirestore, addDoc } from 'firebase/firestore'
 import { Link } from 'react-router-dom';
-import {Footer} from './Footer';
+import { Footer } from './Footer';
 
 export const Checkout = () => {
     const [formulario, setFormulario] = useState({});
@@ -16,19 +14,18 @@ export const Checkout = () => {
     const db = getFirestore();
     const ordenColeccion = collection(db, 'ordenes')
 
-    // if (!nombre || !mail || !cel) return alert("datos invalidos");
     const handleClick = (e) => {
-        e.preventDefault();
+        
         const orden = {
             comprador: formulario,
             productos: carrito,
             total: precioTotal()
         }
-        console.log(orden)
         addDoc(ordenColeccion, orden).then(({id})=>{
             setIdCompra(id)
         }).finally(setCompraFinalizada(true))
-        
+
+        e.preventDefault();
     }
 
     const handleChange = (e) => {
@@ -56,13 +53,12 @@ export const Checkout = () => {
         return (
             <>
             <div className='checkout-container'>
-                <form className='formulario'>
+                <form className='formulario' onSubmit={handleClick}>
                     <h2 className='form-reserva'>Complete los datos para finalizar la reserva</h2>
-                    <input name="nombre" className='formuInput' placeholder='ingrese su nombre' type="text" onChange={handleChange} required="required"/>
-                    <input name="mail" className='formuInput' placeholder='ingrese su email' type="email" onChange={handleChange} required="required"/>
-                    <input name="cel" className='formuInput' placeholder='ingrese su celular' type="tel" onChange={handleChange} required="required"/>
-                    <input type="submit" value="Enviar" onClick={handleClick} className="formBoton"/>
-                    {/* <button onClick={handleClick}>Terminar Compra</button> */}
+                    <input name="nombre" className='formuInput' placeholder='ingrese su nombre' type="text" onChange={handleChange} required/>
+                    <input name="mail" className='formuInput' placeholder='ingrese su email' type="email" onChange={handleChange} required/>
+                    <input name="cel" className='formuInput' placeholder='ingrese su celular' type="tel" onChange={handleChange} required/>
+                    <input type="submit" value="Enviar" className="formBoton"/>
                 </form>
             </div>
             <Footer/>

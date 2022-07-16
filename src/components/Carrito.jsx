@@ -1,5 +1,3 @@
-//@ts-check
-import React from 'react'
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Contexto } from '../context/CartContext';
@@ -9,7 +7,7 @@ import {Footer} from './Footer';
 
 export const Carrito = () => {
 
-  const { carrito, removeProducto, precioTotal, vaciar } = useContext(Contexto);
+  const { carrito, vaciar } = useContext(Contexto);
 
   if(carrito.length>0){
     return(

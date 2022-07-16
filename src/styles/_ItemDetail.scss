@@ -48,12 +48,12 @@ $color-fuente: rgb(136, 4, 4);
         .detail-detail{
             border: 2px $color-fuente solid;
             background-image: url(../media/fondo-cards.gif);
-
             padding: 15px;
             width: 500px;
             box-shadow: 5px 5px 5px 3px rgb(0, 0, 0, 0.5);
         }
         .card-details{
+            background-image: url(../media/fondo-cards.gif);
             border: 2px $color-fuente solid;
             text-decoration: none;
             margin: 1px;
@@ -61,11 +61,11 @@ $color-fuente: rgb(136, 4, 4);
             padding: 3px;
             box-shadow: 5px 5px 5px 3px rgb(0, 0, 0, 0.5);
             &:hover{
-                background-color: rgba(187, 187, 187, 0.411);
+                color: red;
             }
             &:active{
-                font-size: 20px;
-                background-color: whitesmoke;
+                font-size: 120%;
+                color: $color-fuente;
             }
         }
     }
