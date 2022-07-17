@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react';
+import {useState, createContext, useEffect} from 'react';
 import Swal from 'sweetalert2';
 
 export const Contexto = createContext({});
@@ -7,6 +7,10 @@ export default function CartContext({children}) {
 
   const [carrito, setCarrito] = useState([]);
   const [mostrarAlerta, setMostrarAlerta] = useState(true);
+
+  useEffect(()=>{
+    localCarrito();
+  }, [])
 
   // comprobar si el producto existe en el carrito
   const comprobar = (id) => {
